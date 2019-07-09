@@ -18,7 +18,6 @@ Page({
   },
 
   onShow: function (options) {
-    var that =this;
     db.collection('consume').get().then(res => {
       let allMoney = 0;
       let consume = [];
@@ -26,7 +25,7 @@ Page({
         allMoney += Number.parseInt(res.data[i].consume.money);
         consume.push(res.data[i].consume);
       }
-      that.setData({
+      this.setData({
         consume: consume,
         allMoney: allMoney,
       })

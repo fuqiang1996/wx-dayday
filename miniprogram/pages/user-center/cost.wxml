@@ -1,0 +1,10 @@
+<block wx:for="{{consume}}" wx:key="{{item.time}}" wx:for-item="item">
+    <view class="hnisi-preview-item">
+        <view class="hnisi-preview-label"><text>{{item.name}}</text></view>
+        <view class="hnisi-preview-value  hnisi-preview-value-left" >{{item.money}}</view>
+        <view class="hnisi-preview-value  hnisi-preview-value-left" >{{item.time}}</view>
+    </view>
+</block>
+<view>
+    <text>总开销为:{{allMoney}}</text>
+</view>

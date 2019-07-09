@@ -9,13 +9,15 @@
     "pages/deployFunctions/deployFunctions",
     "pages/chooseLib/chooseLib",
     "pages/openapi/openapi",
-    "pages/user-center/index"
+    "pages/user-center/index",
+    "pages/user-center/cost"
   ],
   "window": {
+    "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#1D9CFD",
-    "navigationBarTitleText": "记账这件事",
-    "navigationBarTextStyle": "white"
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "云开发 QuickStart",
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "color": "#000000",
@@ -30,18 +32,11 @@
       },
       {
         "pagePath": "pages/user-center/index",
-        "text": "个人花费",
+        "text": "个人中心",
         "iconPath": "/images/icon-usercenter.png",
         "selectedIconPath": "/images/icon-usercenter-selected.png"
       }
     ]
-  },
-  "window": {
-    "backgroundColor": "#F6F6F6",
-    "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#F6F6F6",
-    "navigationBarTitleText": "云开发 QuickStart",
-    "navigationBarTextStyle": "black"
   },
   "sitemapLocation": "sitemap.json"
 }
