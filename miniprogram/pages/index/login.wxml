@@ -26,7 +26,7 @@
     <view class='uploader'>
       <view class='userinfo'>
         <text class="uploader-text">事项</text>
-        <input id="name" class="input" type='text' placeholder='请输入事项' value="{{consumeObj.name}}" bindinput="handleInput" focus="{{focus}}" ></input><br/>
+        <input id="name" class="input" type='text' placeholder='请输入事项' value="{{consumeObj.name}}" bindinput="handleInput"  ></input><br/>
       </view>
       <view class='userinfo'>
         <text class="uploader-text">花费</text>

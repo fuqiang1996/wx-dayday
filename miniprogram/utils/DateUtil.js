@@ -87,7 +87,7 @@ module.exports = {
     if (sec < 10) {
       sec = '0' + sec;
     }
-    return year +"-"+ month +"-"+ day +" "+ hour+":"+miu+":"+sec;
+    return (""+year).substring(2) +"-"+ month +"-"+ day +" "+ hour+":"+miu+":"+sec;
   },
 
   /**

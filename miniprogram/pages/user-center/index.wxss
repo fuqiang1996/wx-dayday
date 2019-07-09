@@ -27,5 +27,5 @@
 }
 
 .hnisi-preview-value-left{
-    text-align: left;
+    text-align: center;
 }
