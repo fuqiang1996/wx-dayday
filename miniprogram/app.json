@@ -8,9 +8,34 @@
     "pages/addFunction/addFunction",
     "pages/deployFunctions/deployFunctions",
     "pages/chooseLib/chooseLib",
-    "pages/openapi/openapi"
-    
+    "pages/openapi/openapi",
+    "pages/user-center/index"
   ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#1D9CFD",
+    "navigationBarTitleText": "记账这件事",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "color": "#000000",
+    "selectedColor": "#1D9CFD",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/index/login",
+        "text": "首页",
+        "iconPath": "/images/icon-home.png",
+        "selectedIconPath": "/images/icon-home-selected.png"
+      },
+      {
+        "pagePath": "pages/user-center/index",
+        "text": "个人花费",
+        "iconPath": "/images/icon-usercenter.png",
+        "selectedIconPath": "/images/icon-usercenter-selected.png"
+      }
+    ]
+  },
   "window": {
     "backgroundColor": "#F6F6F6",
     "backgroundTextStyle": "light",

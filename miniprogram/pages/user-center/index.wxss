@@ -1,0 +1,31 @@
+.hnisi-preview-item{
+    display: flex;
+    align-items: center;
+}
+
+.hnisi-preview-label{
+    width: 204rpx;
+    word-wrap: break-word;
+    word-break: break-all;
+    color: #888888;
+    font-size: 28rpx;
+    line-height: 40rpx;
+    padding-top: 10rpx;
+    padding-bottom: 10rpx;
+}
+
+.hnisi-preview-value{
+    word-wrap: break-word;
+    word-break: break-all;
+    color: #888888;
+    font-size: 28rpx;
+    line-height: 40rpx;
+    padding-top: 10rpx;
+    padding-bottom: 10rpx;
+    flex: 1;
+    text-align: right;
+}
+
+.hnisi-preview-value-left{
+    text-align: left;
+}

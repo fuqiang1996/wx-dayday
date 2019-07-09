@@ -1,4 +1,5 @@
-// miniprogram/pages/index/login.js
+const DateUtil = require('../../utils/DateUtil');
+const db = wx.cloud.database({});
 Page({
 
   /**
@@ -7,13 +8,13 @@ Page({
   data: {
     avatarUrl: './user-unlogin.png',
     userInfo: {},
-    logged: false,
+    focus: true,
     takeSession: false,
     requestResult: '',
-    consume_: {
+    consumeObj: {
       name: '',
       money: '',
-      date: ''
+      time: ''
     },
   },
 
@@ -48,56 +49,40 @@ Page({
       })
     }
   },
-
-  // 上传图片
-  doUpload: function () {
-    // 选择图片
-    wx.chooseImage({
-      count: 1,
-      sizeType: ['compressed'],
-      sourceType: ['album', 'camera'],
-      success: function (res) {
-
-        wx.showLoading({
-          title: '上传中',
-        })
-
-        const filePath = res.tempFilePaths[0]
-
-        // 上传图片
-        const cloudPath = 'my-image' + filePath.match(/\.[^.]+?$/)[0]
-        wx.cloud.uploadFile({
-          cloudPath,
-          filePath,
-          success: res => {
-            console.log('[上传文件] 成功：', res)
-
-            app.globalData.fileID = res.fileID
-            app.globalData.cloudPath = cloudPath
-            app.globalData.imagePath = filePath
-
-            wx.navigateTo({
-              url: '../storageConsole/storageConsole'
-            })
-          },
-          fail: e => {
-            console.error('[上传文件] 失败：', e)
-            wx.showToast({
-              icon: 'none',
-              title: '上传失败',
-            })
-          },
-          complete: () => {
-            wx.hideLoading()
-          }
-        })
-
-      },
-      fail: e => {
-        console.error(e)
-      }
+  /**
+   * 输入
+   * @param event
+   */
+  handleInput:function (event) {
+    const field = event.target.id;
+    const value = event.detail.value;
+    this.setData({
+      ['consumeObj.'+field]: value,
     })
   },
+  /**
+   * 表单提交
+   * @param e
+   */
+  formSubmit:function (e) {
+    let cum = this.data.consumeObj;
+    cum.time = DateUtil.getCurDate();
+    db.collection('consume').add({
+      data:{
+        consume: cum
+      }
+    }).then(res =>{
+      wx.showToast({
+        title: '添加成功',
+        icon: 'success',
+        duration: 2000
+      })
+    })
+  },
+  /**
+   * 清空
+   */
+  clear:function () {
 
- 
+  }
 })

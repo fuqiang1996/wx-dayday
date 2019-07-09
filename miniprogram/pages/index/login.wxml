@@ -23,18 +23,19 @@
     </view>
   </view> -->
 
-  <view class='uploader'>
-    <view class='userinfo'>
-      <text class="uploader-text">事项</text>
-      <input class="input" type='text' placeholder='请输入事项' value='{{consume_.name}}'></input><br/>
+    <view class='uploader'>
+      <view class='userinfo'>
+        <text class="uploader-text">事项</text>
+        <input id="name" class="input" type='text' placeholder='请输入事项' value="{{consumeObj.name}}" bindinput="handleInput" focus="{{focus}}" ></input><br/>
+      </view>
+      <view class='userinfo'>
+        <text class="uploader-text">花费</text>
+        <input id="money" class="input" type='digit' placeholder='请输入花费' value="{{consumeObj.money}}" bindinput="handleInput"></input>
+      </view>
+      <view class='userinfo'>
+          <button class="" style='color:green;' bindtap="formSubmit">确认</button>
+          <button class="" style='color:gray;' bindtap="clear">清除</button>
+      </view>
     </view>
-    <view class='userinfo'>
-      <text class="uploader-text">花费</text>
-      <input class="input" type='text' placeholder='请输入花费' value='{{consume_.money}}' ></input>
-    </view>
-    <view class='userinfo'>
-        <button class="" style='color:green;' bindtap="onGetOpenid">确认</button>
-        <button class="" style='color:gray;' bindtap="onGetOpenid">取消</button>
-    </view>
-  </view>
+
 </view>
