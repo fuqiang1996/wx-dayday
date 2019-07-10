@@ -1,10 +1,11 @@
-<block wx:for="{{consume}}" wx:key="{{item.time}}" wx:for-item="item">
-    <view class="hnisi-preview-item">
-        <view class="hnisi-preview-label"><text>{{item.name}}</text></view>
+<block wx:for="{{consume}}" wx:key="{{item.id}}" wx:for-item="item" bindtab="updateClick" id="{{item._id}}">
+    <view class="hnisi-preview-item" bindtap="updateClick">
+        <view class="hnisi-preview-label" ><text>{{item.name}}</text></view>
         <view class="hnisi-preview-value  hnisi-preview-value-left" >{{item.money}}</view>
-        <view class="hnisi-preview-value  hnisi-preview-value-left" >{{item.time}}</view>
+        <button class="hnisi-preview-value  hnisi-preview-value-left" bindtab="updateClick" id="{{item._id}}">{{item.time}}</button>
     </view>
 </block>
-<view>
-    <text>总开销为:{{allMoney}}</text>
+<view class="allcost">
+    <text>总开销为:{{allMoney}} 元</text>
 </view>
+

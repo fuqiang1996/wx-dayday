@@ -30,7 +30,7 @@
       </view>
       <view class='userinfo'>
         <text class="uploader-text">花费</text>
-        <input id="money" class="input" type='digit' placeholder='请输入花费' value="{{consumeObj.money}}" bindinput="handleInput"></input>
+        <input id="money" class="input" type='digit' placeholder='请输入花费(元)' value="{{consumeObj.money}}" bindinput="handleInput"></input>
       </view>
       <view class='userinfo'>
           <button class="" style='color:green;' bindtap="formSubmit">确认</button>

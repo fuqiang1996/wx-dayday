@@ -10,7 +10,8 @@
     "pages/chooseLib/chooseLib",
     "pages/openapi/openapi",
     "pages/user-center/index",
-    "pages/user-center/cost"
+    "pages/user-center/cost",
+    "pages/user-center/updateOrdelete"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",

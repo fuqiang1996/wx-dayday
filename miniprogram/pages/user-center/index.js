@@ -18,19 +18,29 @@ Page({
   },
 
   onShow: function (options) {
-    var that =this;
+    let that =this;
     db.collection('consume').get().then(res => {
       let allMoney = 0;
       let consume = [];
       for (let i=0; i< res.data.length; i++){
-        allMoney += Number.parseInt(res.data[i].consume.money);
-        consume.push(res.data[i].consume);
+        allMoney += Number.parseFloat(res.data[i].money);
+        consume.push(res.data[i]);
       }
       that.setData({
         consume: consume,
         allMoney: allMoney,
       })
     })
-  }
+  },
+  /**
+   * 更新或者删除
+   */
+  updateClick: function (e) {
+    let id = e.target.id;
+    wx.navigateTo({
+      url:"/pages/user-center/updateOrdelete?id="+id,
+    })
+  },
+
 
 })

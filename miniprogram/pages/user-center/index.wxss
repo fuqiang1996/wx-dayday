@@ -12,6 +12,7 @@
     line-height: 40rpx;
     padding-top: 10rpx;
     padding-bottom: 10rpx;
+    text-align: center;
 }
 
 .hnisi-preview-value{
@@ -28,4 +29,11 @@
 
 .hnisi-preview-value-left{
     text-align: center;
+    color: cornflowerblue;
+}
+.allcost{
+    text-align: center;
+    padding-top: 20rpx;
+    padding-bottom: 20rpx;
+    font-size: 40rpx;
 }

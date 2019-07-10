@@ -1,4 +1,5 @@
 const DateUtil = require('../../utils/DateUtil');
+const UUID = require('../../utils/UUID');
 const db = wx.cloud.database({});
 Page({
 
@@ -69,7 +70,7 @@ Page({
     cum.time = DateUtil.getCurDate();
     db.collection('consume').add({
       data:{
-        consume: cum
+        ...cum,
       }
     }).then(res =>{
       wx.showToast({
@@ -81,8 +82,6 @@ Page({
         consumeObj: ""
       })
     });
-
-
   },
   /**
    * 清空
@@ -91,5 +90,6 @@ Page({
     this.setData({
       consumeObj: ""
     })
-  }
+  },
+
 })
