@@ -24,12 +24,18 @@
     padding-top: 10rpx;
     padding-bottom: 10rpx;
     flex: 1;
-    text-align: right;
+    text-align: center;
 }
 
 .hnisi-preview-value-left{
     text-align: center;
     color: cornflowerblue;
+}
+
+.left{
+    text-align: left;
+    align-items: inherit;
+    padding-left: 0rpx;
 }
 .allcost{
     text-align: center;
