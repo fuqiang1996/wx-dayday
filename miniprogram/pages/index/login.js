@@ -7,6 +7,46 @@ Page({
    * 页面的初始数据
    */
   data: {
+    array: ['餐饮美食','服饰美容', '生活日用', '日常缴费', '交通出行','休闲娱乐','医疗保健','住房物业','其他消费'],
+    objectArray: [
+      {
+        id: 0,
+        name: '餐饮美食'
+      },
+      {
+        id: 1,
+        name: '服饰美容'
+      },
+      {
+        id: 2,
+        name: '生活日用'
+      },
+      {
+        id: 3,
+        name: '日常缴费'
+      },
+      {
+        id: 4,
+        name: '交通出行'
+      },
+      {
+        id: 5,
+        name: '休闲娱乐'
+      },
+      {
+        id: 6,
+        name: '医疗保健'
+      },
+      {
+        id: 7,
+        name: '住房物业'
+      },
+      {
+        id: 8,
+        name: '其他消费'
+      },
+    ],
+    index: 0, // 类型
     avatarUrl: './user-unlogin.png',
     userInfo: {},
     focus: true,
@@ -22,6 +62,7 @@ Page({
       time: '',
       type: '1',
     },
+    disable: false,
   },
 
   /**
@@ -72,8 +113,12 @@ Page({
    */
   formSubmit:function (e) {
     let cum = this.data.consumeObj;
+    if(cum.type == '1'){
+      cum.costtype = this.data.index;
+    }
     cum.time = DateUtil.getCurDate();
     cum.month = DateUtil.getCurYearMonth();
+
     db.collection('consume').add({
       data:{
         ...cum,
@@ -106,6 +151,16 @@ Page({
   radioChange: function(e) {
     this.setData({
       'consumeObj.type': e.detail.value,
+    })
+  },
+  /**
+   * 选择器
+   * @param e
+   */
+  bindPickerChange: function(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      index: e.detail.value
     })
   },
 })

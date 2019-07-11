@@ -14,11 +14,11 @@
   </view>
 
   <view class='uploader'>
-    <view class='userinfo'>
+    <view class='jzType'>
       <text class="uploader-text">事项</text>
       <input id="name" class="input" type='text' placeholder='请输入事项' value="{{consumeObj.name}}" bindinput="handleInput"  ></input><br/>
     </view>
-    <view class='userinfo'>
+    <view class='jzType'>
       <text class="uploader-text">金额</text>
       <input id="money" class="input" type='digit' placeholder='请输入金额(元)' value="{{consumeObj.money}}" bindinput="handleInput"></input>
     </view>
@@ -36,6 +36,14 @@
       </view>
     </view>
 
+    <view class="section" wx:if="{{consumeObj.type == '1'}}">
+      <view class="section__title" style="color: #007aff; font-size: 34rpx; ">请选择消费类型:</view>
+      <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" >
+        <view class="picker">
+          {{array[index]}} >
+        </view>
+      </picker>
+    </view>
     <view class='userinfo'>
         <button class="" style='color:green;' bindtap="formSubmit">确认</button>
         <button class="" style='color:gray;' bindtap="clear">清除</button>
