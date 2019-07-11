@@ -1,5 +1,6 @@
 const DateUtil = require('../../utils/DateUtil');
 const DbUtils = require('../../utils/DbUtils');
+
 Page({
 
   /**
@@ -78,5 +79,20 @@ Page({
         allMoney: allMoney,
       })
     })
-  }
+  },
+  /**
+   *
+   */
+  butClick: function () {
+    console.log("aaa")
+    wx.switchTab({
+      url: '/pages/user-center/cost',
+    })
+    wx.redirectTo({
+      url: '/pages/user-center/cost',
+    });
+    wx.navigateTo({
+      url: '/pages/user-center/cost',
+    })
+  },
 })
