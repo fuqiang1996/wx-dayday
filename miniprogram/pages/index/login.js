@@ -12,10 +12,15 @@ Page({
     focus: true,
     takeSession: false,
     requestResult: '',
+    items: [
+      {name: '1', value: '花费',checked: 'true'},
+      {name: '2', value: '收入'},
+    ],
     consumeObj: {
       name: '',
       money: '',
-      time: ''
+      time: '',
+      type: '1',
     },
   },
 
@@ -68,6 +73,7 @@ Page({
   formSubmit:function (e) {
     let cum = this.data.consumeObj;
     cum.time = DateUtil.getCurDate();
+    cum.month = DateUtil.getCurYearMonth();
     db.collection('consume').add({
       data:{
         ...cum,
@@ -91,5 +97,13 @@ Page({
       consumeObj: ""
     })
   },
-
+  /**
+   * 单选事件
+   * @param e
+   */
+  radioChange: function(e) {
+    this.setData({
+      'consumeObj.type': e.detail.value,
+    })
+  },
 })

@@ -13,29 +13,35 @@
     </view>
   </view>
 
-  <!-- 上传图片 -->
-  <!-- <view class="uploader">
-    <view class="uploader-text" bindtap="doUpload">
-      <text>上传图片</text>
+  <view class='uploader'>
+    <view class='userinfo'>
+      <text class="uploader-text">事项</text>
+      <input id="name" class="input" type='text' placeholder='请输入事项' value="{{consumeObj.name}}" bindinput="handleInput"  ></input><br/>
     </view>
-    <view class="uploader-container" wx:if="{{imgUrl}}">
-      <image class="uploader-image" src="{{imgUrl}}" mode="aspectFit" bindtap="previewImg"></image>
+    <view class='userinfo'>
+      <text class="uploader-text">花费</text>
+      <input id="money" class="input" type='digit' placeholder='请输入花费(元)' value="{{consumeObj.money}}" bindinput="handleInput"></input>
     </view>
-  </view> -->
 
-    <view class='uploader'>
-      <view class='userinfo'>
-        <text class="uploader-text">事项</text>
-        <input id="name" class="input" type='text' placeholder='请输入事项' value="{{consumeObj.name}}" bindinput="handleInput"  ></input><br/>
+    <view style="background-color: white;">
+      <view>
+        <text style="margin-left: 10rpx; ">记账类型:</text>
       </view>
-      <view class='userinfo'>
-        <text class="uploader-text">花费</text>
-        <input id="money" class="input" type='digit' placeholder='请输入花费(元)' value="{{consumeObj.money}}" bindinput="handleInput"></input>
-      </view>
-      <view class='userinfo'>
-          <button class="" style='color:green;' bindtap="formSubmit">确认</button>
-          <button class="" style='color:gray;' bindtap="clear">清除</button>
+      <view class="radio-group">
+        <radio-group  bindchange="radioChange">
+          <view class="radio" wx:for="{{items}}" wx:key="{{items.name}}">
+            <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+          </view>
+        </radio-group>
       </view>
     </view>
+
+    <view class='userinfo'>
+        <button class="" style='color:green;' bindtap="formSubmit">确认</button>
+        <button class="" style='color:gray;' bindtap="clear">清除</button>
+    </view>
+  </view>
+
+
 
 </view>

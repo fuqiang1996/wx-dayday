@@ -11,7 +11,8 @@
     "pages/openapi/openapi",
     "pages/user-center/index",
     "pages/user-center/cost",
-    "pages/user-center/updateOrdelete"
+    "pages/user-center/updateOrdelete",
+    "pages/user-center/income"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -32,8 +33,14 @@
         "selectedIconPath": "/images/icon-home-selected.png"
       },
       {
+        "pagePath": "pages/user-center/income",
+        "text": "个人收入",
+        "iconPath": "/images/icon-service.png",
+        "selectedIconPath": "/images/icon-service-selected.png"
+      },
+      {
         "pagePath": "pages/user-center/index",
-        "text": "个人中心",
+        "text": "个人花费",
         "iconPath": "/images/icon-usercenter.png",
         "selectedIconPath": "/images/icon-usercenter-selected.png"
       }

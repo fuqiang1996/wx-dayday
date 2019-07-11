@@ -83,8 +83,8 @@ Page({
     })
   },
   goBack: function(){
-    wx.switchTab({
-      url: '/pages/user-center/index'
+    wx.navigateBack({
+      delta: 1
     })
   }
 })
