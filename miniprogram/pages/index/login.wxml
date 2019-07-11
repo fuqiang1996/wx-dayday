@@ -19,8 +19,8 @@
       <input id="name" class="input" type='text' placeholder='请输入事项' value="{{consumeObj.name}}" bindinput="handleInput"  ></input><br/>
     </view>
     <view class='userinfo'>
-      <text class="uploader-text">花费</text>
-      <input id="money" class="input" type='digit' placeholder='请输入花费(元)' value="{{consumeObj.money}}" bindinput="handleInput"></input>
+      <text class="uploader-text">金额</text>
+      <input id="money" class="input" type='digit' placeholder='请输入金额(元)' value="{{consumeObj.money}}" bindinput="handleInput"></input>
     </view>
 
     <view style="background-color: white;">
