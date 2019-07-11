@@ -85,7 +85,8 @@ Page({
         duration: 2000
       });
       this.setData({
-        consumeObj: ""
+        'consumeObj.name': "",
+        'consumeObj.money': "",
       })
     });
   },
@@ -94,7 +95,8 @@ Page({
    */
   clear:function () {
     this.setData({
-      consumeObj: ""
+      'consumeObj.name': "",
+      'consumeObj.money': "",
     })
   },
   /**
