@@ -23,12 +23,12 @@
       <input id="money" class="input" type='digit' placeholder='请输入金额(元)' value="{{consumeObj.money}}" bindinput="handleInput"></input>
     </view>
 
-    <view style="background-color: white;">
-      <view>
-        <text style="margin-left: 10rpx; ">记账类型:</text>
+    <view class="jzType" style="background-color: white;">
+      <view class="typeText">
+        <text style="color: #007aff; font-size: 34rpx; ">记账类型:</text>
       </view>
       <view class="radio-group">
-        <radio-group  bindchange="radioChange">
+        <radio-group  class="radio-group"  bindchange="radioChange">
           <view class="radio" wx:for="{{items}}" wx:key="{{items.name}}">
             <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
           </view>
