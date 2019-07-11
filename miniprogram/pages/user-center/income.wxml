@@ -1,3 +1,12 @@
+<view class="section">
+    <view class="section__title">年月: </view>
+    <picker mode="date" fields="month" value="{{date}}"   bindchange="bindDateChange">
+        <view class="picker">
+            当前选择年月: {{date}}
+        </view>
+    </picker>
+</view>
+
 <block wx:for="{{consume}}" wx:key="{{item.id}}" wx:for-item="item" bindtab="updateClick" id="{{item._id}}">
     <view class="hnisi-preview-item" bindtap="updateClick">
         <view class="hnisi-preview-label" ><text>{{item.name}}</text></view>

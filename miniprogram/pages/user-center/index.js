@@ -1,4 +1,3 @@
-const db = wx.cloud.database({});
 const DateUtil = require('../../utils/DateUtil');
 const DbUtils = require('../../utils/DbUtils');
 Page({
@@ -17,16 +16,21 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let that = this;
     let yearmonth = DateUtil.getCurYearMonthStr();
-    this.setData({
+
+    that.setData({
       date: yearmonth
     })
   },
 
   onShow: function (options) {
+    let date = this.data.date;
+    date = date.split("-");
+    date = date[0]+date[1];
     this.queryOrderBymonth({
       type: '1',
-      month: DateUtil.getCurYearMonth(),
+      month: Number.parseInt(date),
     });
   },
   /**
