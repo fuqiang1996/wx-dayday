@@ -19,7 +19,9 @@ Page({
 
   onShow: function (options) {
     let that =this;
-    db.collection('consume').get().then(res => {
+    db.collection('consume').where({
+      type: '1',
+    }).get().then(res => {
       let allMoney = 0;
       let consume = [];
       for (let i=0; i< res.data.length; i++){

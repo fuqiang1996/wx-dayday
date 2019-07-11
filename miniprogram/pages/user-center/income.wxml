@@ -6,6 +6,6 @@
     </view>
 </block>
 <view class="allcost">
-    <text>总开销为:{{allMoney}} 元</text>
+    <text>总收入为:{{allMoney}} 元</text>
 </view>
 
