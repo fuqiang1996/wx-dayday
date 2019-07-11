@@ -90,7 +90,7 @@ module.exports = {
     return (""+year).substring(2) +"-"+ month +"-"+ day +" "+ hour+":"+miu+":"+sec;
   },
   /**
-   * 获取当前年月
+   * 获取当前年月 数字形式
    * 格式：yyyyMM
    */
   getCurYearMonth: function() {
@@ -104,6 +104,21 @@ module.exports = {
     let yearMonth = Number.parseInt(year+month);
     return yearMonth ;
   },
+  /**
+   * 获取当前年月
+   * 格式：yyyy-MM
+   */
+  getCurYearMonthStr: function() {
+    const date = new Date();
+    let year = date.getFullYear();
+    let month = date.getMonth()+1;
+
+    if (month < 10) {
+      month = '0' + month;
+    }
+    return year +"-"+ month;
+  },
+
   /**
    * 获取两个日期相差天数
    * dateStart：开始日期，格式：yyyyMMdd

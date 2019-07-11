@@ -1,4 +1,5 @@
 const db = wx.cloud.database({});
+const DateUtil = require('../../utils/DateUtil');
 Page({
 
   /**
@@ -8,13 +9,17 @@ Page({
     label: '',
     consume:[],
     allMoney:0,
+    date: '',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let yearmonth = DateUtil.getCurYearMonthStr();
+    this.setData({
+      date: yearmonth
+    })
   },
 
   onShow: function (options) {
@@ -43,6 +48,15 @@ Page({
       url:"/pages/user-center/updateOrdelete?id="+id,
     })
   },
-
+  /**
+   * 时间修改
+   * @param e
+   */
+  bindDateChange: function(e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      date: e.detail.value
+    })
+  },
 
 })
