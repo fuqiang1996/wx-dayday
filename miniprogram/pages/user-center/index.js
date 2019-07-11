@@ -1,5 +1,6 @@
 const db = wx.cloud.database({});
 const DateUtil = require('../../utils/DateUtil');
+const DbUtils = require('../../utils/DbUtils');
 Page({
 
   /**
@@ -23,21 +24,10 @@ Page({
   },
 
   onShow: function (options) {
-    let that =this;
-    db.collection('consume').where({
+    this.queryOrderBymonth({
       type: '1',
-    }).get().then(res => {
-      let allMoney = 0;
-      let consume = [];
-      for (let i=0; i< res.data.length; i++){
-        allMoney += Number.parseFloat(res.data[i].money);
-        consume.push(res.data[i]);
-      }
-      that.setData({
-        consume: consume,
-        allMoney: allMoney,
-      })
-    })
+      month: DateUtil.getCurYearMonth(),
+    });
   },
   /**
    * 更新或者删除
@@ -56,7 +46,33 @@ Page({
     console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
       date: e.detail.value
-    })
+    });
+    let date = e.detail.value
+    date = date.split("-");
+    date = date[0]+date[1];
+    this.queryOrderBymonth({
+      type: '1',
+      month: Number.parseInt(date),
+    });
   },
 
+  /**
+   * 查询事项
+   * @param query
+   */
+  queryOrderBymonth: function (query) {
+    let that =this;
+    DbUtils.queryOrder(query).then(res => {
+      let allMoney = 0;
+      let consume = [];
+      for (let i=0; i< res.data.length; i++){
+        allMoney += Number.parseFloat(res.data[i].money);
+        consume.push(res.data[i]);
+      }
+      that.setData({
+        consume: consume,
+        allMoney: allMoney,
+      })
+    })
+  }
 })

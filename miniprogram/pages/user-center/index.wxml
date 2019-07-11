@@ -1,6 +1,6 @@
 <view class="section">
     <view class="section__title">请选择日期: </view>
-    <picker mode="date" fields="month" value="{{date}}"  end="{{date}}" bindchange="bindDateChange">
+    <picker mode="date" fields="month" value="{{date}}"   bindchange="bindDateChange">
         <view class="picker">
             当前年月: {{date}}
         </view>
