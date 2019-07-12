@@ -3,3 +3,7 @@
     <ff-canvas id="bar-dom" canvas-id="bar" opts="{{ opts }}"></ff-canvas>
 </view>
 
+<view class="container">
+    <text>{{ message }}</text>
+    <ff-canvas id="pieSelect" canvas-id="pieSelect" opts="{{ opts }}"></ff-canvas>
+</view>

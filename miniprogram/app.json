@@ -12,7 +12,8 @@
     "pages/user-center/index",
     "pages/user-center/cost",
     "pages/user-center/updateOrdelete",
-    "pages/user-center/income"
+    "pages/user-center/income",
+    "pages/user-center/cost-colunm"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
