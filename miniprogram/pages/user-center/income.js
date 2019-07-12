@@ -1,6 +1,7 @@
-const db = wx.cloud.database({});
 const DateUtil = require('../../utils/DateUtil');
 const DbUtils = require('../../utils/DbUtils');
+const NumberHandle = require('../../utils/NumberHandle');
+
 Page({
 
   /**
@@ -69,7 +70,8 @@ Page({
       let allMoney = 0;
       let consume = [];
       for (let i=0; i< res.data.length; i++){
-        allMoney += Number.parseFloat(res.data[i].money);
+        let tempNum = Number.parseFloat(res.data[i].money);
+        allMoney = NumberHandle.add(allMoney,tempNum);
         consume.push(res.data[i]);
       }
       that.setData({
