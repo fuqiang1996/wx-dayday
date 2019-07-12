@@ -1,4 +1,12 @@
 <!--index.wxml-->
+<view class="section">
+    <view class="section__title">当前选择年月: </view>
+    <picker mode="date" fields="month" value="{{date}}"   bindchange="bindDateChange">
+        <view class="picker">
+            {{date}}
+        </view>
+    </picker>
+</view>
 <view class="container">
     <ff-canvas id="bar-dom" canvas-id="bar" opts="{{ opts }}"></ff-canvas>
 </view>

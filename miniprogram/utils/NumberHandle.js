@@ -55,5 +55,9 @@ module.exports = {
   add: function(a,b){
     let result = this.calc(a,b,'add');
     return result;
+  },
+  divide: function (a,b) {
+    let result = this.calc(a,b,'divide');
+    return result;
   }
 }

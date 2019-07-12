@@ -17,3 +17,20 @@
     width: 100%;
     height: 33%;
 }
+.section{
+    display: flex;
+    align-items: center;    /**子view垂直居中*/
+    vertical-align: center; /**垂直居中*/
+    justify-content: center; /**内容居中*/
+    flex-direction:row; /**子view排列方式row--水平 column--垂直*/
+    border-bottom:1px solid rgba(0, 0, 0, 0.1);
+}
+.picker{
+    margin: 8rpx 15rpx;
+    color: #007aff;
+    font-size: 43rpx;
+}
+.section__title{
+    margin: 8rpx 8rpx;
+    font-size: 35rpx;
+}
