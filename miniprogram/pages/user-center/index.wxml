@@ -14,6 +14,11 @@
         <button class="hnisi-preview-value  hnisi-preview-value-left left" bindtab="updateClick" id="{{item._id}}">{{item.time}}</button>
     </view>
 </block>
+<view class="numsection">
+    <view class="allNum">总记录数为: </view>
+    <view class="num">{{num}}</view>
+</view>
+
 <view class="hnisi-preview-item">
     <text style="margin-left: 20rpx;">总开销:{{allMoney}} 元</text>
     <navigator  class="navi" url="{{url}}" hover-class="navigator-hover" >本月详细信息 >>></navigator>

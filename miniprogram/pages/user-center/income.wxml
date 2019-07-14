@@ -14,6 +14,12 @@
         <button class="hnisi-preview-value  hnisi-preview-value-left left" bindtab="updateClick" id="{{item._id}}">{{item.time}}</button>
     </view>
 </block>
+
+<view class="numsection">
+    <view class="allNum">总记录数为: </view>
+    <view class="num">{{num}}</view>
+</view>
+
 <view class="allcost">
     <text>总收入为:{{allMoney}} 元</text>
 </view>

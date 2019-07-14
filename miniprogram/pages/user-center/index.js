@@ -13,6 +13,7 @@ Page({
     allMoney:0,
     date: '',
     url:'',
+    num:'',
   },
 
   /**
@@ -85,6 +86,7 @@ Page({
       that.setData({
         consume: consume,
         allMoney: allMoney,
+        num: res.data.length,
       })
     })
   },

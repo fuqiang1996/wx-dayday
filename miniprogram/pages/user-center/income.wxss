@@ -67,3 +67,20 @@ page {
     margin: 8rpx 8rpx;
     font-size: 35rpx;
 }
+.num{
+    margin-right: 40rpx;
+    color: chocolate;
+    font-size: 35rpx;
+}
+.numsection{
+    display: flex;
+    align-items: center;    /**子view垂直居中*/
+    justify-content: space-between;
+    flex-direction:row; /**子view排列方式row--水平 column--垂直*/
+    border-top:1px solid rgba(0, 0, 0, 0.1);
+}
+.allNum{
+    margin-left: 40rpx;
+    font-size: 35rpx;
+    color: chocolate;
+}
