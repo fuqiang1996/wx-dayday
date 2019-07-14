@@ -160,15 +160,15 @@ Page({
           }
         }
         // 计算占用百分比
-        let cyms_ =  NumberHandle.divide(cyms,allMoney).toFixed(1);
-        let fsmr_ =  NumberHandle.divide(fsmr,allMoney).toFixed(1);
-        let shry_ =  NumberHandle.divide(shry,allMoney).toFixed(1);
-        let rcjf_ =  NumberHandle.divide(rcjf,allMoney).toFixed(1);
-        let jtcx_ =  NumberHandle.divide(jtcx,allMoney).toFixed(1);
-        let xxyl_ =  NumberHandle.divide(xxyl,allMoney).toFixed(1);
-        let ylbj_ =  NumberHandle.divide(ylbj,allMoney).toFixed(1);
-        let zfwy_ =  NumberHandle.divide(zfwy,allMoney).toFixed(1);
-        let qtxf_ =  NumberHandle.divide(qtxf,allMoney).toFixed(1);
+        let cyms_ =  NumberHandle.divide(cyms,allMoney).toFixed(2);
+        let fsmr_ =  NumberHandle.divide(fsmr,allMoney).toFixed(2);
+        let shry_ =  NumberHandle.divide(shry,allMoney).toFixed(2);
+        let rcjf_ =  NumberHandle.divide(rcjf,allMoney).toFixed(2);
+        let jtcx_ =  NumberHandle.divide(jtcx,allMoney).toFixed(2);
+        let xxyl_ =  NumberHandle.divide(xxyl,allMoney).toFixed(2);
+        let ylbj_ =  NumberHandle.divide(ylbj,allMoney).toFixed(2);
+        let zfwy_ =  NumberHandle.divide(zfwy,allMoney).toFixed(2);
+        let qtxf_ =  NumberHandle.divide(qtxf,allMoney).toFixed(2);
         // 构造参数
         let data = [
           { name: '餐饮美食', percent: Number.parseFloat(cyms_), a: '1' },
@@ -182,19 +182,19 @@ Page({
           { name: '其他消费', percent: Number.parseFloat(qtxf_), a: '1' },
         ];
         let map ={
-          '餐饮美食': NumberHandle.multiply(cyms_,100)+"%",
-          '服饰美容': NumberHandle.multiply(fsmr_,100)+"%",
-          '生活日用': NumberHandle.multiply(shry_,100)+"%",
-          '日常缴费': NumberHandle.multiply(rcjf_,100)+"%",
-          '交通出行': NumberHandle.multiply(jtcx_,100)+"%",
-          '休闲娱乐': NumberHandle.multiply(xxyl_,100)+"%",
-          '医疗保健': NumberHandle.multiply(ylbj_,100)+"%",
-          '住房物业': NumberHandle.multiply(zfwy_,100)+"%",
-          '其他消费': NumberHandle.multiply(qtxf_,100)+"%",
+          '餐饮美食': NumberHandle.multiply(cyms_,100)+"% "+cyms,
+          '服饰美容': NumberHandle.multiply(fsmr_,100)+"% "+fsmr,
+          '生活日用': NumberHandle.multiply(shry_,100)+"% "+shry,
+          '日常缴费': NumberHandle.multiply(rcjf_,100)+"% "+rcjf,
+          '交通出行': NumberHandle.multiply(jtcx_,100)+"% "+jtcx,
+          '休闲娱乐': NumberHandle.multiply(xxyl_,100)+"% "+xxyl,
+          '医疗保健': NumberHandle.multiply(ylbj_,100)+"% "+ylbj,
+          '住房物业': NumberHandle.multiply(zfwy_,100)+"% "+zfwy,
+          '其他消费': NumberHandle.multiply(qtxf_,100)+"% "+qtxf,
         }
         // 存储到全局变量
-        StorageUtil.save('data_',data);
-        StorageUtil.save('map_',map);
+        StorageUtil.save('data_',data,false);
+        StorageUtil.save('map_',map,false);
       })
 
     })
