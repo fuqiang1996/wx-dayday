@@ -1,5 +1,4 @@
 const DateUtil = require('../../utils/DateUtil');
-const UUID = require('../../utils/UUID');
 const db = wx.cloud.database({});
 Page({
 

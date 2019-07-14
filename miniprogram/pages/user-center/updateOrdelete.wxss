@@ -55,7 +55,7 @@ page {
 
 .uploader-text, .tunnel-text {
     width: 100%;
-    line-height: 52px;
+    line-height: 33px;
     font-size: 34rpx;
     color: #007aff;
 }
@@ -134,4 +134,54 @@ page {
     font-size: 24rpx;
     line-height: 36rpx;
     word-break: break-all;
+}
+
+.jzType{
+    margin: 30rpx 10rpx;
+    display: flex;
+    align-items: center;    /**子view垂直居中*/
+    justify-content: space-between;
+    flex-direction:row; /**子view排列方式row--水平 column--垂直*/
+    width: 100%;
+    border-top:1px solid rgba(0, 0, 0, 0.1);
+    border-bottom:1px solid rgba(0, 0, 0, 0.1);
+}
+
+.radio-group{
+    display: flex;
+    align-items: center;    /**子view垂直居中*/
+    vertical-align: center; /**垂直居中*/
+    justify-content: center; /**内容居中*/
+    flex-direction:row; /**子view排列方式row--水平 column--垂直*/
+}
+.typeText{
+    align-items: center;    /**子view垂直居中*/
+    vertical-align: center; /**垂直居中*/
+    justify-content: center; /**内容居中*/
+}
+.radio{
+    padding: 5rpx 8rpx;
+    margin: 5rpx 10rpx;
+    color: dimgray;
+}
+.section{
+    margin: 30rpx 10rpx;
+    display: flex;
+    align-items: center;    /**子view垂直居中*/
+    justify-content: space-between;
+    flex-direction:row; /**子view排列方式row--水平 column--垂直*/
+    width: 100%;
+    border-top:1px solid rgba(0, 0, 0, 0.1);
+    border-bottom:1px solid rgba(0, 0, 0, 0.1);
+}
+.picker{
+    margin: 8rpx 80rpx;
+    color: dimgray;
+}
+.section__title{
+    margin: 8rpx 8rpx;
+    font-size: 35rpx;
+}
+.input{
+    margin-right: 45rpx;
 }

@@ -1,18 +1,34 @@
-<view class="container">
-
-    <view class='uploader'>
-        <view class='userinfo'>
-            <text class="uploader-text">事项</text>
-            <input id="name" class="input" type='text' placeholder='请输入事项' value="{{consumeObj.name}}" bindinput="handleInput"  ></input><br/>
+<view class='uploader'>
+    <view class='jzType'>
+        <text class="uploader-text">事项</text>
+        <input id="name" class="input" type='text' placeholder='请输入事项' value="{{consumeObj.name}}" bindinput="handleInput"  ></input><br/>
+    </view>
+    <view class='jzType'>
+        <text class="uploader-text">金额</text>
+        <input id="money" class="input" type='digit' placeholder='请输入金额(元)' value="{{consumeObj.money}}" bindinput="handleInput"></input>
+    </view>
+    <view class="jzType" style="background-color: white;">
+        <view class="typeText">
+            <text style="color: #007aff; font-size: 34rpx; ">记账类型:</text>
         </view>
-        <view class='userinfo'>
-            <text class="uploader-text">花费</text>
-            <input id="money" class="input" type='digit' placeholder='请输入花费' value="{{consumeObj.money}}" bindinput="handleInput"></input>
-        </view>
-        <view class='userinfo'>
-            <button class="" style='color:green;' bindtap="saveClick">保存</button>
-            <button class="" style='color:gray;' bindtap="deleteClick">删除</button>
+        <view class="radio-group">
+            <radio-group  class="radio-group"  bindchange="radioChange">
+                <view class="radio" wx:for="{{items}}" wx:key="{{items.name}}">
+                    <radio value="{{item.name}}" checked="{{item.checked}}"/>{{item.value}}
+                </view>
+            </radio-group>
         </view>
     </view>
-
+    <view class="section" wx:if="{{consumeObj.type == '1'}}">
+        <view class="section__title" style="color: #007aff; font-size: 34rpx; ">请选择消费类型:</view>
+        <picker bindchange="bindPickerChange" value="{{index}}" range="{{array}}" >
+            <view class="picker">
+                {{array[index]}} >
+            </view>
+        </picker>
+    </view>
+    <view class='userinfo'>
+        <button class="" style='color:green;' bindtap="saveClick">保存</button>
+        <button class="" style='color:gray;' bindtap="deleteClick">删除</button>
+    </view>
 </view>
