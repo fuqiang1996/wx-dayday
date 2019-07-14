@@ -17,7 +17,7 @@
 <view class="allcost">
     <text>总开销为:{{allMoney}} 元</text>
 </view>
-<navigator  class="navi" url="/pages/user-center/cost" hover-class="navigator-hover">查看饼图详细统计信息</navigator>
+<navigator  class="navi" url="/pages/user-center/cost" hover-class="navigator-hover" >查看饼图详细统计信息</navigator>
 <navigator  class="navi" url="/pages/user-center/cost-colunm" hover-class="navigator-hover">查看柱状图详细统计信息</navigator>
 
 

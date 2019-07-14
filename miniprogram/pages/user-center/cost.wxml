@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="section">
     <view class="section__title">当前选择年月: </view>
-    <picker mode="date" fields="month" value="{{date}}"   bindchange="bindDateChange">
+    <picker mode="date" fields="month" value="{{date}}"   bindchange="bindDateChange" disabled>
         <view class="picker">
             {{date}}
         </view>
