@@ -8,12 +8,13 @@
 </view>
 
 <block wx:for="{{consume}}" wx:key="{{item.id}}" wx:for-item="item" bindtab="updateClick" id="{{item._id}}">
-    <view class="hnisi-preview-item" >
+    <view class="hnisi-preview-item" bindtap="updateClick">
         <view class="hnisi-preview-label" ><text>{{item.name}}</text></view>
         <view class="hnisi-preview-value" style="text-align: center;" >{{item.money}}</view>
         <button class="hnisi-preview-value  hnisi-preview-value-left left" bindtab="updateClick" id="{{item._id}}">{{item.time}}</button>
     </view>
 </block>
+
 <view class="numsection">
     <view class="allNum">总记录数为: </view>
     <view class="num">{{num}}</view>
