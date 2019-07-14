@@ -12,6 +12,7 @@ Page({
     consume:[],
     allMoney:0,
     date: '',
+    url:'',
   },
 
   /**
@@ -22,7 +23,8 @@ Page({
     let yearmonth = DateUtil.getCurYearMonthStr();
 
     that.setData({
-      date: yearmonth
+      date: yearmonth,
+      url: '/pages/user-center/cost?month='+yearmonth,
     })
   },
 
@@ -52,9 +54,9 @@ Page({
    * @param e
    */
   bindDateChange: function(e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
-      date: e.detail.value
+      date: e.detail.value,
+      url: '/pages/user-center/cost?month='+e.detail.value,
     });
     let date = e.detail.value
     date = date.split("-");
@@ -63,6 +65,7 @@ Page({
       type: '1',
       month: Number.parseInt(date),
     });
+    this.queryMonthData(Number.parseInt(date));
   },
 
   /**
@@ -85,23 +88,8 @@ Page({
       })
     })
   },
-  /**
-   *
-   */
-  butClick: function () {
-    console.log("aaa")
-    wx.switchTab({
-      url: '/pages/user-center/cost',
-    })
-    wx.redirectTo({
-      url: '/pages/user-center/cost',
-    });
-    wx.navigateTo({
-      url: '/pages/user-center/cost',
-    })
-  },
 
-
+  // 查询饼图情况
   queryMonthData: function(month=DateUtil.getCurYearMonth()){
     return new Promise((resolve,reject)=>{
       DbUtils.queryOrder({
@@ -159,6 +147,7 @@ Page({
             }
           }
         }
+
         // 计算占用百分比
         let cyms_ =  NumberHandle.divide(cyms,allMoney).toFixed(2);
         let fsmr_ =  NumberHandle.divide(fsmr,allMoney).toFixed(2);
@@ -192,13 +181,27 @@ Page({
           '住房物业': NumberHandle.multiply(zfwy_,100)+"% "+zfwy,
           '其他消费': NumberHandle.multiply(qtxf_,100)+"% "+qtxf,
         }
+
+        let dataColunm = [
+          { month: '餐饮', sales: cyms },
+          { month: '服美', sales: fsmr },
+          { month: '日用', sales: shry },
+          { month: '缴费', sales: rcjf },
+          { month: '交通', sales: jtcx },
+          { month: '娱乐', sales: xxyl },
+          { month: '医疗', sales: ylbj },
+          { month: '住房', sales: zfwy },
+          { month: '其他', sales: qtxf },
+        ]
         // 存储到全局变量
         StorageUtil.save('data_',data,false);
         StorageUtil.save('map_',map,false);
+        StorageUtil.save('dataColunm',dataColunm,false);
       })
 
     })
 
   },
+
 
 })

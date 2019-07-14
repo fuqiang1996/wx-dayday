@@ -1,6 +1,4 @@
-const DbUtils = require('../../utils/DbUtils');
 const DateUtil = require('../../utils/DateUtil');
-const NumberHandle = require('../../utils/NumberHandle');
 const { StorageUtil} = require('../../utils/index');
 import F2 from '../../f2-canvas/lib/f2';
 
@@ -72,11 +70,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options);
+    console.log(options.month);
     let that = this;
     map = StorageUtil.load("map_");
     data = StorageUtil.load("data_");
     that.setData({
-      'opts.onInit': initChart
+      date: options.month,
+      'opts.onInit': initChart,
     })
   },
   onShow: function (option) {

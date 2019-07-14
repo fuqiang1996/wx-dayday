@@ -1,11 +1,9 @@
 <!--index.wxml-->
 <view class="section">
-    <view class="section__title">当前选择年月: </view>
-    <picker mode="date" fields="month" value="{{date}}"   bindchange="bindDateChange" disabled>
-        <view class="picker">
-            {{date}}
-        </view>
-    </picker>
+    <view class="section__title">财有限，费用无穷， </view>
+    <view class="picker">
+        当量入为出
+    </view>
 </view>
 <view class="container">
     <ff-canvas id="bar-dom" canvas-id="bar" opts="{{ opts }}"></ff-canvas>

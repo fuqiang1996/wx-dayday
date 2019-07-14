@@ -1,15 +1,9 @@
 import F2 from '../../f2-canvas/lib/f2';
+const { StorageUtil} = require('../../utils/index');
 
 let chart = null;
 let data = [
-  { month: '1 月', sales: 4000 },
-  { month: '2 月', sales: 2034 },
-  { month: '3 月', sales: 61 },
-  { month: '4 月', sales: 2000 },
-  { month: '5 月', sales: 48 },
-  { month: '6 月', sales: 38 },
-  { month: '7 月', sales: 38 },
-  { month: '8 月', sales: 38 },
+
 ];
 function initChart(canvas, width, height) {
 
@@ -88,10 +82,15 @@ Page({
   },
   data: {
     opts: {
-      onInit: initChart
+      onInit: ''
     }
   },
 
-  onReady() {
+  onLoad(options) {
+    let that = this;
+    data = StorageUtil.load("dataColunm");
+    that.setData({
+      'opts.onInit': initChart,
+    })
   }
 });

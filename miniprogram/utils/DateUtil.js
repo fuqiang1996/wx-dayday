@@ -131,6 +131,21 @@ module.exports = {
     const date2 = new Date(dateEndTime);
     const days = (date2.getTime() - date1.getTime()) / (1000 * 60 * 60 * 24);
     return days;
-  }
+  },
+  //获取当前月份以及近8个月的月份时间
+  getMonths: function() {
+    var dataArr = [];
+    var data = new Date();
+    var year = data.getFullYear();
+    data.setMonth(data.getMonth() + 1, 1); //获取到当前月份,设置月份
+    for (var i = 0; i < 8; i++) {
+      data.setMonth(data.getMonth() - 1); //每次循环一次 月份值减1
+      var m = data.getMonth() + 1;
+      m = m < 10 ? "0" + m : m;
+      dataArr.push(data.getFullYear() + "-" + m);
+    }
+    console.log(dataArr);
+    return dataArr;
+  },
 
 }

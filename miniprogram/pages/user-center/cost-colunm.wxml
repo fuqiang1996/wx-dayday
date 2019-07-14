@@ -1,5 +1,11 @@
 <!--index.wxml-->
 <view class="container">
-    <text>请点击柱子</text>
+    <text>柱状图</text>
     <ff-canvas id="columnSelect" canvas-id="columnSelect" opts="{{ opts }}"></ff-canvas>
+</view>
+<view class="section">
+    <view class="section__title">每次看到穷游日志的感受都是： </view>
+    <view class="picker">
+        那么穷就别TM出去浪了~~~
+    </view>
 </view>

@@ -8,16 +8,16 @@
 </view>
 
 <block wx:for="{{consume}}" wx:key="{{item.id}}" wx:for-item="item" bindtab="updateClick" id="{{item._id}}">
-    <view class="hnisi-preview-item" bindtap="updateClick">
+    <view class="hnisi-preview-item" >
         <view class="hnisi-preview-label" ><text>{{item.name}}</text></view>
-        <view class="hnisi-preview-value  hnisi-preview-value-left" >{{item.money}}</view>
+        <view class="hnisi-preview-value" style="text-align: center;" >{{item.money}}</view>
         <button class="hnisi-preview-value  hnisi-preview-value-left left" bindtab="updateClick" id="{{item._id}}">{{item.time}}</button>
     </view>
 </block>
-<view class="allcost">
-    <text>总开销为:{{allMoney}} 元</text>
+<view class="hnisi-preview-item">
+    <text style="margin-left: 20rpx;">总开销:{{allMoney}} 元</text>
+    <navigator  class="navi" url="{{url}}" hover-class="navigator-hover" >本月详细信息 >>></navigator>
 </view>
-<navigator  class="navi" url="/pages/user-center/cost" hover-class="navigator-hover" >查看饼图详细统计信息</navigator>
-<navigator  class="navi" url="/pages/user-center/cost-colunm" hover-class="navigator-hover">查看柱状图详细统计信息</navigator>
+<navigator  class="navi" url="/pages/user-center/cost-colunm" hover-class="navigator-hover">本月柱状图统计信息</navigator>
 
 
