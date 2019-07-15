@@ -151,15 +151,15 @@ Page({
         }
 
         // 计算占用百分比
-        let cyms_ =  NumberHandle.divide(cyms,allMoney).toFixed(2);
-        let fsmr_ =  NumberHandle.divide(fsmr,allMoney).toFixed(2);
-        let shry_ =  NumberHandle.divide(shry,allMoney).toFixed(2);
-        let rcjf_ =  NumberHandle.divide(rcjf,allMoney).toFixed(2);
-        let jtcx_ =  NumberHandle.divide(jtcx,allMoney).toFixed(2);
-        let xxyl_ =  NumberHandle.divide(xxyl,allMoney).toFixed(2);
-        let ylbj_ =  NumberHandle.divide(ylbj,allMoney).toFixed(2);
-        let zfwy_ =  NumberHandle.divide(zfwy,allMoney).toFixed(2);
-        let qtxf_ =  NumberHandle.divide(qtxf,allMoney).toFixed(2);
+        let cyms_ =  NumberHandle.divide(cyms,allMoney).toFixed(3);
+        let fsmr_ =  NumberHandle.divide(fsmr,allMoney).toFixed(3);
+        let shry_ =  NumberHandle.divide(shry,allMoney).toFixed(3);
+        let rcjf_ =  NumberHandle.divide(rcjf,allMoney).toFixed(3);
+        let jtcx_ =  NumberHandle.divide(jtcx,allMoney).toFixed(3);
+        let xxyl_ =  NumberHandle.divide(xxyl,allMoney).toFixed(3);
+        let ylbj_ =  NumberHandle.divide(ylbj,allMoney).toFixed(3);
+        let zfwy_ =  NumberHandle.divide(zfwy,allMoney).toFixed(3);
+        let qtxf_ =  NumberHandle.divide(qtxf,allMoney).toFixed(3);
         // 构造参数
         let data = [
           { name: '餐饮美食', percent: Number.parseFloat(cyms_), a: '1' },
@@ -173,7 +173,7 @@ Page({
           { name: '其他消费', percent: Number.parseFloat(qtxf_), a: '1' },
         ];
         let map ={
-          '餐饮美食': NumberHandle.multiply(cyms_,100)+"% "+cyms,
+          '餐饮美食': NumberHandle.multiply(cyms_ ,100)+"% "+cyms,
           '服饰美容': NumberHandle.multiply(fsmr_,100)+"% "+fsmr,
           '生活日用': NumberHandle.multiply(shry_,100)+"% "+shry,
           '日常缴费': NumberHandle.multiply(rcjf_,100)+"% "+rcjf,
