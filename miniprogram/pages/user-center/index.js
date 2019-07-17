@@ -111,23 +111,23 @@ Page({
           let tempNum = Number.parseFloat(consume.money);
           allMoney = NumberHandle.add(allMoney,tempNum);
           switch (consume.costtype) {
-            case "0" :{
+            case 0 :{
               cyms = NumberHandle.add(cyms,tempNum);
               break;
             }
-            case "1" :{
+            case 1 :{
               fsmr = NumberHandle.add(fsmr,tempNum);
               break;
             }
-            case "2" :{
+            case 2 :{
               shry = NumberHandle.add(shry,tempNum);
               break;
             }
-            case "3" :{
+            case 3 :{
               rcjf = NumberHandle.add(rcjf,tempNum);
               break;
             }
-            case "4" :{
+            case 4 :{
               jtcx = NumberHandle.add(jtcx,tempNum);
               break;
             }
@@ -135,15 +135,15 @@ Page({
               xxyl = NumberHandle.add(xxyl,tempNum);
               break;
             }
-            case "6" :{
+            case 6 :{
               ylbj = NumberHandle.add(ylbj,tempNum);
               break;
             }
-            case "7" :{
+            case 7 :{
               zfwy = NumberHandle.add(zfwy,tempNum);
               break;
             }
-            case "8" :{
+            case 8 :{
               qtxf = NumberHandle.add(qtxf,tempNum);
               break;
             }
