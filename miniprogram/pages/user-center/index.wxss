@@ -72,7 +72,7 @@ page {
     padding-bottom: 20rpx;
     font-size: 40rpx;
     color: cornflowerblue;
-    margin-left: 60rpx;
+    margin-left: 70rpx;
 }
 .num{
     margin-right: 40rpx;

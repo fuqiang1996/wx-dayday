@@ -17,7 +17,6 @@ module.exports = {
           const promise = db.collection('consume').skip(i * MAX_LIMIT).limit(MAX_LIMIT).where(item).get()
           tasks.push(promise)
         }
-        console.log(tasks);
         return Promise.all(tasks).then((res) => {
           let arr = []
           for (let i = 0; i < batchTimes; i++) {
