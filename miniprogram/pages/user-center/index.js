@@ -110,7 +110,7 @@ Page({
           let consume = res.data[i];
           let tempNum = Number.parseFloat(consume.money);
           allMoney = NumberHandle.add(allMoney,tempNum);
-          switch (consume.costtype) {
+          switch (Number.parseInt(consume.costtype)) {
             case 0 :{
               cyms = NumberHandle.add(cyms,tempNum);
               break;
