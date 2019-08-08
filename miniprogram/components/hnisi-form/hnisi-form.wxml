@@ -1,0 +1,15 @@
+<!--components/form/hnisi-form.wxml-->
+<form bindsubmit="handleSubmit" bindhideTips="handleHideTips" xmlns:mark="http://www.w3.org/1999/xhtml">
+    <!--  <view class="hnisi-toptips hnisi-toptips-warn" wx:if="{{isShowTips}}">{{tips}}</view>-->
+    <slot></slot>
+    <slot name="content"/>
+    <hnisi-agree wx:if="{{agreeText||agreeSlot}}" value="{{agree}}" bindchange="handleAgreeChange">
+        <block wx:if="{{agreeText&&!agreeSlot}}">{{agreeText}}</block>
+        <block wx:else><slot name="agree"/></block>
+    </hnisi-agree>
+    <view class="hnisi-btn-area">
+        <button class="hnisi-btn" type="primary" formType="submit" disabled="{{(agreeText||agreeSlot)&&!agree}}">{{submitText}}</button>
+        <button class="hnisi-btn" type="primary" formType="submit" disabled="{{(agreeText||agreeSlot)&&!agree}}" mark:cancel="cancel">{{cancelText}}</button>
+        <slot name="button"/>
+    </view>
+</form>
